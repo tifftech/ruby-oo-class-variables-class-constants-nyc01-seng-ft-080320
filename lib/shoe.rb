@@ -1,21 +1,20 @@
-class Book
-  attr_accessor :author, :page_count
-  attr_reader :title, :genre
+class Shoe
+  attr_accessor :color, :size, :material, :condition
+  attr_reader :brand
 
-  GENRES = []
+  BRANDS = []
 
-  def initialize(title)
-    @title = title
+  def initialize(brand)
+    @brand = brand
+    if !(BRANDS.include?(@brand))
+      BRANDS << @brand
+    end
   end
 
-  def turn_page
-    puts "Flipping the page...wow, you read fast!"
-  end
 
-  def genre=(genre)
-    @genre = genre
-    GENRES << genre
-    #or GENRES = @genre
+  def cobble
+    self.condition = "new"
+    puts "Your shoe is as good as new!"
   end
 
 end
